@@ -1,18 +1,21 @@
-{"id": 1, "question": "How many days of home office are allowed per week?", "expected": {"route": "rag", "escalation": false}}
-{"id": 2, "question": "What is the probation period for new employees?", "expected": {"route": "rag", "escalation": false}}
-{"id": 3, "question": "How can I request parental leave?", "expected": {"route": "rag", "escalation": false}}
-{"id": 4, "question": "Is flexible working time allowed during onboarding?", "expected": {"route": "rag", "escalation": false}}
-{"id": 5, "question": "Who should I contact for HR-related questions during onboarding?", "expected": {"route": "rag", "escalation": false}}
+{"id": 1, "question": "How many home office days per week am I currently allowed to take?", "expected": {"route": "response_generation", "escalation": false}}
+{"id": 2, "question": "From when does the increased home office allowance apply, and how many days will it be?", "expected": {"route": "response_generation", "escalation": false}}
+{"id": 3, "question": "What are the core working hours I must be available during?", "expected": {"route": "response_generation", "escalation": false}}
+{"id": 4, "question": "How long is the probation period and what is evaluated during that time?", "expected": {"route": "response_generation", "escalation": false}}
+{"id": 5, "question": "How many vacation days do employees receive per calendar year?", "expected": {"route": "response_generation", "escalation": false}}
 
-{"id": 6, "question": "How can I request an additional monitor or keyboard?", "expected": {"route": "rag", "escalation": false}}
-{"id": 7, "question": "What should I do if my VPN connection is not working?", "expected": {"route": "rag", "escalation": false}}
-{"id": 8, "question": "Which operating systems are officially supported by the company?", "expected": {"route": "rag", "escalation": false}}
-{"id": 9, "question": "How do I reset my corporate password?", "expected": {"route": "rag", "escalation": false}}
-{"id": 10, "question": "Is personal software installation allowed on company laptops?", "expected": {"route": "rag", "escalation": false}}
+{"id": 6, "question": "How should I report sick leave and when do I need to provide a medical certificate?", "expected": {"route": "response_generation", "escalation": false}}
+{"id": 7, "question": "What equipment is included as standard when I join the company?", "expected": {"route": "response_generation", "escalation": false}}
+{"id": 8, "question": "What is the process for requesting a second monitor or a docking station?", "expected": {"route": "response_generation", "escalation": false}}
+{"id": 9, "question": "Which communication channels are considered official for internal communication?", "expected": {"route": "response_generation", "escalation": false}}
+{"id": 10, "question": "Who should I contact for HR-related questions during onboarding?", "expected": {"route": "response_generation", "escalation": false}}
 
-{"id": 11, "question": "My VPN is slow but still works. Should I contact IT?", "expected": {"route": "decision", "escalation": false}}
-{"id": 12, "question": "Can I use my personal laptop temporarily if my work laptop is delayed?", "expected": {"route": "decision", "escalation": false}}
-{"id": 13, "question": "I will work from abroad for two weeks. Is this allowed?", "expected": {"route": "decision", "escalation": false}}
+{"id": 11, "question": "My VPN disconnects occasionally but reconnects after a minute. What should I do?", "expected": {"route": "response_generation", "escalation": false}}
+{"id": 12, "question": "Can I work fully remote for a few months if my manager agrees?", "expected": {"route": "response_generation", "escalation": false}}
+{"id": 13, "question": "Is it allowed to install personal productivity software on my company laptop?", "expected": {"route": "response_generation", "escalation": false}}
+{"id": 14, "question": "Can I use my personal laptop temporarily while waiting for my company device?", "expected": {"route": "response_generation", "escalation": false}}
 
-{"id": 14, "question": "I cannot log in to my laptop at all and I start work tomorrow.", "expected": {"route": "escalation", "escalation": true}}
-{"id": 15, "question": "I need urgent access to Jira for a production issue.", "expected": {"route": "escalation", "escalation": true}}
+{"id": 15, "question": "I received an email asking for my password and VPN details. What should I do immediately?", "expected": {"route": "escalation", "escalation": true}}
+{"id": 16, "question": "My company laptop was stolen during a business trip. What are the first steps?", "expected": {"route": "escalation", "escalation": true}}
+{"id": 17, "question": "I cannot log in to any company systems on my first working day and work starts tomorrow.", "expected": {"route": "escalation", "escalation": true}}
+{"id": 18, "question": "There is a production issue and I urgently need Jira access, but I do not have it.", "expected": {"route": "escalation", "escalation": true}}
