@@ -12,7 +12,7 @@ PYTHONPATH=src uv run python src/onboarding_agent/eval/run_eval.py
 PYTHONPATH=src uv run python src/onboarding_agent/eval/run_eval.py --use-llm-judges
 
 # Visualize results
-uv run python src/onboarding_agent/eval/visualize_results.py src/onboarding_agent/eval/results/eval_results.json
+uv run python src/onboarding_agent/eval/visualize_eval_results.py src/onboarding_agent/eval/results/eval_results.json
 ```
 
 ## Key Metrics
