@@ -56,7 +56,7 @@ Format:
 
 Optional LLM-as-judge: Answer relevance and completeness (percentage scores)
 
-## Example Output
+## Results
 
 ```
 ================================================================================
