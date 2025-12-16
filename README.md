@@ -127,8 +127,13 @@ This will start the Chatbot UI and the backend services.
 
 The system includes an automated evaluation framework (`eval/`) testing 18 distinct scenarios, including standard queries, edge cases, and critical escalations.
 
-- **Routing Accuracy**: >85% (Target)
-- **Escalation Detection**: Successfully identifies security incidents and creates tickets.
+**Results:**
+
+- **Overall Accuracy**: 88.9% (16/18 tests passed)
+- **Response Generation Accuracy**: 100%
+- **Escalation Detection Accuracy**: 50%
+- **Average Latency**: 5.41s
+- **F1 Score**: 0.67
 
 To run the evaluation:
 
@@ -136,14 +141,25 @@ To run the evaluation:
 ./eval/run_eval.sh
 ```
 
+For detailed metrics, see [eval/README.md](eval/README.md).
+
 ### Load Testing
 
 A load test suite (`loadtest/`) simulates concurrent user traffic to identify bottlenecks.
 
-- **Scenario**: 100 queries with 10 concurrent workers.
-- **Typical Latency (Local)**: ~12-18s per query (highly dependent on GPU/CPU).
+**Results (100 queries, 10 workers):**
+
+- **Success Rate**: 100%
+- **Mean Latency**: 40.88s
+- **P95 Latency**: 51.65s
+- **Throughput**: 0.24 queries/second
+
+**Observations:**
+
 - **Bottleneck**: The primary bottleneck is **LLM Inference** (Ollama).
 - **Optimization**: In a production environment, this would be solved by hosting the LLM on a dedicated inference server (e.g., vLLM) or using a cloud API.
+
+For detailed load test configuration, see [loadtest/README.md](loadtest/README.md).
 
 To run the load test:
 
