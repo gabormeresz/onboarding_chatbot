@@ -1,4 +1,4 @@
-from onboarding_agent.core.state import AgentState
+from onboarding_agent.agent.state import AgentState
 
 
 def compose_final_answer_node(state: AgentState) -> AgentState:

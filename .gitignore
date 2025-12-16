@@ -1,7 +1,6 @@
 .env
 /.venv/
 /.github/
-/data/tickets/*
-/data/chroma/*
+/.storage/
 /playground/
 __pycache__/

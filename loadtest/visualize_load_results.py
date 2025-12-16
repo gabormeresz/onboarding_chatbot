@@ -361,7 +361,7 @@ def print_optimization_recommendations(all_results: List[Dict]):
 
 def main():
     if len(sys.argv) < 2:
-        results_file = "src/onboarding_agent/loadtest/results/load_test_results.json"
+        results_file = "loadtest/results/load_test_results.json"
     else:
         results_file = sys.argv[1]
 

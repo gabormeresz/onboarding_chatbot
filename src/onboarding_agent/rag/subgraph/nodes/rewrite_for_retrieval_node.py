@@ -1,4 +1,4 @@
-from onboarding_agent.core.state import AgentState
+from onboarding_agent.agent.state import AgentState
 from onboarding_agent.models.chat import get_chat_model
 
 

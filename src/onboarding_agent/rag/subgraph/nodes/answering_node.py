@@ -1,4 +1,4 @@
-from onboarding_agent.core.state import AgentState
+from onboarding_agent.agent.state import AgentState
 from onboarding_agent.models.chat import get_chat_model
 from langchain_core.prompts import ChatPromptTemplate
 
@@ -30,9 +30,9 @@ def answering_node(state: AgentState) -> dict:
             ]
         )
 
-        print("Prompting LLM with context:\n")
-        print(context)
-        print("\n" + "-" * 80 + "\n")
+        # print("Prompting LLM with context:\n")
+        # print(context)
+        # print("\n" + "-" * 80 + "\n")
 
         chain = prompt | llm
         result = chain.invoke({"context": context, "question": user_query})

@@ -1,4 +1,4 @@
-from onboarding_agent.core.state import AgentState
+from onboarding_agent.agent.state import AgentState
 from onboarding_agent.tools.ticket_tool import create_ticket_tool
 from onboarding_agent.models.chat import get_chat_model
 from langchain_core.messages import SystemMessage, HumanMessage

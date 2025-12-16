@@ -1,12 +1,12 @@
 from langgraph.graph import StateGraph, START, END
 
-from onboarding_agent.core.state import AgentState
-from onboarding_agent.agent.rag_subgraph.nodes.retrieve_node import retrieve_node
-from onboarding_agent.agent.rag_subgraph.nodes.answering_node import answering_node
-from onboarding_agent.agent.rag_subgraph.nodes.rewrite_for_retrieval_node import (
+from onboarding_agent.agent.state import AgentState
+from onboarding_agent.rag.subgraph.nodes.retrieve_node import retrieve_node
+from onboarding_agent.rag.subgraph.nodes.answering_node import answering_node
+from onboarding_agent.rag.subgraph.nodes.rewrite_for_retrieval_node import (
     rewrite_for_retrieval_node,
 )
-from onboarding_agent.core.state import build_initial_state
+from onboarding_agent.agent.state import build_initial_state
 
 
 def build_graph():

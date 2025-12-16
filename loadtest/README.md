@@ -6,11 +6,10 @@ Performance testing framework for the onboarding chatbot measuring latency, thro
 
 ```bash
 # One-command test + visualization (recommended)
-src/onboarding_agent/loadtest/run_load_test.sh
+loadtest/run_load_test.sh
 
-# Or run manually
-PYTHONPATH=src uv run python src/onboarding_agent/loadtest/run_load.py --queries "100"
-PYTHONPATH=src uv run python src/onboarding_agent/loadtest/visualize_load_results.py
+# Visualize results
+PYTHONPATH=src uv run python loadtest/visualize_load_results.py
 ```
 
 ## Key Metrics
@@ -69,7 +68,7 @@ Queries      Workers    Mean Lat     P95 Lat      Throughput      Success %
    📈 Expected Impact: 2-3x throughput increase
 ```
 
-Results saved to `src/onboarding_agent/loadtest/results/load_test_results.json` with detailed per-query metrics and failure analysis.
+Results saved to `loadtest/results/load_test_results.json` with detailed per-query metrics and failure analysis.
 
 ## Bottleneck Analysis
 
@@ -83,19 +82,6 @@ Results saved to `src/onboarding_agent/loadtest/results/load_test_results.json` 
 2. **🟡 Semantic caching**: Cache RAG responses → 30-50% improvement
 3. **🟡 Async processing**: Multiple Ollama instances → 2-3x throughput
 4. **⚪ RAG tuning**: Optimize vector search → 10-20% faster
-
-## Custom Configuration
-
-```bash
-# Different query count
-PYTHONPATH=src uv run python src/onboarding_agent/loadtest/run_load.py --queries "100" --workers 5
-
-# Custom output location
-PYTHONPATH=src uv run python src/onboarding_agent/loadtest/run_load.py --output my_test.json
-
-# Different test questions
-PYTHONPATH=src uv run python src/onboarding_agent/loadtest/run_load.py --questions-file path/to/questions.jsonl
-```
 
 ## Files
 

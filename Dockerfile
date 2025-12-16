@@ -12,7 +12,7 @@ COPY pyproject.toml uv.lock* ./
 RUN uv sync --no-dev
 
 COPY src ./src
-COPY app ./app
+COPY streamlit ./streamlit
 COPY data ./data
 COPY README.md ./
 
@@ -24,4 +24,4 @@ ENV STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
 HEALTHCHECK --interval=30s --timeout=3s --start-period=20s --retries=3 \
   CMD curl -fsS http://localhost:8501/_stcore/health || exit 1
 
-CMD ["uv", "run", "streamlit", "run", "app/streamlit_app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+CMD ["uv", "run", "streamlit", "run", "streamlit/app.py", "--server.address=0.0.0.0", "--server.port=8501"]

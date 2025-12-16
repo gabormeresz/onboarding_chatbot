@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import streamlit as st
 from onboarding_agent.agent.graph import build_graph
-from onboarding_agent.core.state import build_initial_state
+from onboarding_agent.agent.state import build_initial_state
 
 # Load environment variables for LangSmith tracing
 load_dotenv(override=False)

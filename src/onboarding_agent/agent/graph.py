@@ -10,7 +10,7 @@ Flow:
 """
 
 from langgraph.graph import StateGraph, START, END
-from onboarding_agent.core.state import AgentState
+from onboarding_agent.agent.state import AgentState
 from onboarding_agent.agent.nodes.classify_intent_node import classify_intent_node
 from onboarding_agent.agent.nodes.router_node import router_node
 from onboarding_agent.agent.nodes.response_generation_node import (

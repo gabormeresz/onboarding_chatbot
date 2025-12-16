@@ -17,7 +17,7 @@ from typing import Dict, List, Any, Tuple, Optional
 from dataclasses import dataclass, field, asdict
 
 from onboarding_agent.agent.graph import build_graph
-from onboarding_agent.core.state import build_initial_state, AgentState
+from onboarding_agent.agent.state import build_initial_state, AgentState
 from onboarding_agent.models.chat import get_chat_model
 
 

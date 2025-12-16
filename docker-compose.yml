@@ -24,6 +24,8 @@ services:
 
   ingest:
     build: .
+    volumes:
+      - ./.storage/chroma:/app/.storage/chroma
     environment:
       - OLLAMA_HOST=http://ollama:11434
       - PYTHONPATH=/app/src
@@ -45,12 +47,14 @@ services:
     build: .
     ports:
       - "8501:8501"
+    volumes:
+      - ./.storage/chroma:/app/.storage/chroma
     environment:
       - OLLAMA_HOST=http://ollama:11434
       - PYTHONPATH=/app/src
       # - LANGSMITH_TRACING=true
       # - LANGSMITH_ENDPOINT=https://api.smith.langchain.com
-      # - LANGSMITH_API_KEY=   # put your LangSmith API key here
+      # - LANGSMITH_API_KEY= # put your LangSmith API key here
       # - LANGSMITH_PROJECT=onboarding_agent-docker
     depends_on:
       - ollama
@@ -64,7 +68,7 @@ services:
         until curl -s http://ollama:11434/api/tags | grep -q 'qwen2.5:7b-instruct'; do sleep 2; done; \
         until curl -s http://ollama:11434/api/tags | grep -q 'bge-m3'; do sleep 2; done; \
         echo 'Starting Streamlit...'; \
-        uv run streamlit run app/streamlit_app.py --server.address=0.0.0.0 --server.port=8501"
+        uv run streamlit run streamlit/app.py --server.address=0.0.0.0 --server.port=8501"
       ]
 
 volumes:

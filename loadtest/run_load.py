@@ -16,7 +16,7 @@ from pathlib import Path
 import argparse
 
 from onboarding_agent.agent.graph import build_graph
-from onboarding_agent.core.state import build_initial_state
+from onboarding_agent.agent.state import build_initial_state
 
 
 def load_test_questions(questions_file: str) -> List[Dict[str, Any]]:
@@ -74,7 +74,7 @@ def execute_single_query(graph, question: str, query_id: int) -> Dict[str, Any]:
 def run_load_test(
     num_queries: int,
     max_workers: int,
-    questions_file: str = "src/onboarding_agent/eval/questions.jsonl",
+    questions_file: str = "eval/questions.jsonl",
 ) -> Dict[str, Any]:
     """
     Run load test with specified number of queries.
@@ -445,13 +445,13 @@ def main():
     parser.add_argument(
         "--output",
         type=str,
-        default="src/onboarding_agent/loadtest/results/load_test_results.json",
+        default="loadtest/results/load_test_results.json",
         help="Output file for results",
     )
     parser.add_argument(
         "--questions-file",
         type=str,
-        default="src/onboarding_agent/eval/questions.jsonl",
+        default="eval/questions.jsonl",
         help="Path to questions file",
     )
 

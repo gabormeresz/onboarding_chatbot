@@ -30,8 +30,8 @@ def create_ticket_tool(
             "department": department,
             "contact_email": contact_email,
         }
-        os.makedirs("data/tickets", exist_ok=True)
-        ticket_file = os.path.join("data/tickets", f"{ticket_id}.json")
+        os.makedirs(".storage/tickets", exist_ok=True)
+        ticket_file = os.path.join(".storage/tickets", f"{ticket_id}.json")
         with open(ticket_file, "w") as f:
             json.dump(ticket_data, f, indent=4)
 

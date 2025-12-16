@@ -2,7 +2,7 @@ from langchain_chroma import Chroma
 from onboarding_agent.models.embeddings import get_embedding_model
 from pathlib import Path
 
-PERSIST_DIR = "data/chroma"
+PERSIST_DIR = ".storage/chroma"
 
 
 def get_vectorstore():

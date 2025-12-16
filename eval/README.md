@@ -6,13 +6,13 @@ Automated testing for the agentic RAG chatbot measuring routing accuracy, escala
 
 ```bash
 # Basic evaluation (~1 minute)
-PYTHONPATH=src uv run python src/onboarding_agent/eval/run_eval.py
+./eval/run_eval.sh
 
 # With LLM-as-judge quality metrics (complete, slower)
-PYTHONPATH=src uv run python src/onboarding_agent/eval/run_eval.py --use-llm-judges
+./eval/run_eval.sh --use-llm-judges
 
 # Visualize results
-uv run python src/onboarding_agent/eval/visualize_eval_results.py src/onboarding_agent/eval/results/eval_results.json
+uv run python eval/visualize_eval_results.py eval/results/eval_results.json
 ```
 
 ## Key Metrics

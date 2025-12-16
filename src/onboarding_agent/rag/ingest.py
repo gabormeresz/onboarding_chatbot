@@ -23,7 +23,7 @@ from langchain_ollama import OllamaEmbeddings
 # -------- Config --------
 
 DATA_DIR = Path("data/docs")
-CHROMA_DIR = Path("data/chroma")
+CHROMA_DIR = Path(".storage/chroma")
 
 EMBEDDING_MODEL = "bge-m3"
 
@@ -32,7 +32,7 @@ CHUNK_OVERLAP = 100
 
 # -------- Manifest loading --------
 
-MANIFEST_PATH = Path("config/knowledge_manifest.json")
+MANIFEST_PATH = Path("data/knowledge_manifest.json")
 
 
 def load_manifest() -> dict:
@@ -107,8 +107,6 @@ def run_ingest() -> None:
         separators=["\n## ", "\n### ", "\n#### "],
     )
     chunks = splitter.split_documents(documents)
-
-    # print(chunks)
 
     print(f"   Created {len(chunks)} chunks")
 

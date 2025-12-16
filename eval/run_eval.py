@@ -7,14 +7,14 @@ Usage:
 
 Options:
     --use-llm-judges    Enable LLM-as-judge for answer quality evaluation (slower)
-    --output FILE       Save detailed results to JSON file (default: src/onboarding_agent/eval/results/eval_results.json)
+    --output FILE       Save detailed results to JSON file (default: eval/results/eval_results.json)
 """
 
 import argparse
 import sys
 from pathlib import Path
 
-from onboarding_agent.eval.evaluate_graph import GraphEvaluator
+from evaluate_graph import GraphEvaluator
 
 
 def main():
@@ -43,8 +43,8 @@ Examples:
     parser.add_argument(
         "--output",
         type=str,
-        default="src/onboarding_agent/eval/results/eval_results.json",
-        help="Output file for detailed results (default: src/onboarding_agent/eval/results/eval_results.json)",
+        default="eval/results/eval_results.json",
+        help="Output file for detailed results (default: eval/results/eval_results.json)",
     )
 
     parser.add_argument(
@@ -62,7 +62,7 @@ Examples:
     else:
         # Auto-detect based on common locations
         candidates = [
-            "src/onboarding_agent/eval/questions.jsonl",
+            "eval/questions.jsonl",
             "questions.jsonl",
             "../eval/questions.jsonl",
         ]

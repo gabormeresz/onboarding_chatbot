@@ -1,5 +1,5 @@
-from onboarding_agent.agent.rag_subgraph.vectorstore import get_vectorstore
-from onboarding_agent.core.state import AgentState
+from onboarding_agent.rag.vectorstore import get_vectorstore
+from onboarding_agent.agent.state import AgentState
 
 
 def retrieve_node(state: AgentState) -> dict:
