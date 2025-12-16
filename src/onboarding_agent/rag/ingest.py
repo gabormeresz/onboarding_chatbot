@@ -27,8 +27,8 @@ CHROMA_DIR = Path("data/chroma")
 
 EMBEDDING_MODEL = "bge-m3"
 
-CHUNK_SIZE = 350
-CHUNK_OVERLAP = 60
+CHUNK_SIZE = 500
+CHUNK_OVERLAP = 100
 
 # -------- Manifest loading --------
 
