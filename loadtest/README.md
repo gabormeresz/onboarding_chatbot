@@ -28,7 +28,7 @@ PYTHONPATH=src uv run python loadtest/visualize_load_results.py
 - **Test data**: Reuses questions from `eval/questions.jsonl`
 - **Architecture**: Synchronous (optimal for single Ollama instance)
 
-## Example Output
+## Results
 
 ```
 ================================================================================
