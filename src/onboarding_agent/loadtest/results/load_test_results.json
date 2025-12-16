@@ -1,0 +1,31 @@
+[
+  {
+    "num_queries": 100,
+    "max_workers": 10,
+    "metrics": {
+      "total_queries": 100,
+      "successful_queries": 100,
+      "failed_queries": 0,
+      "success_rate": 100.0,
+      "latency": {
+        "min": 17.358540058135986,
+        "max": 57.43169975280762,
+        "mean": 42.20998821020126,
+        "median": 43.98638296127319,
+        "p50": 43.98638296127319,
+        "p95": 53.17702494859695,
+        "p99": 55.37289754629136,
+        "stdev": 8.90112868165864
+      },
+      "throughput": {
+        "total_duration": 432.40296363830566,
+        "queries_per_second": 0.2312657599720975
+      },
+      "route_distribution": {
+        "needs_rag": 90,
+        "escalation": 10
+      }
+    },
+    "sample_failures": []
+  }
+]
