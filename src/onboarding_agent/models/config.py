@@ -1,0 +1,3 @@
+EMBEDDING_MODEL_NAME = "bge-m3"
+CHAT_MODEL_NAME = "qwen2.5:7b-instruct"
+CHAT_TEMPERATURE = 0.2

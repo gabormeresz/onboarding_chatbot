@@ -1,0 +1,52 @@
+{
+  "documents": [
+    {
+      "file": "hr_handbook.md",
+      "doc_id": "hr_handbook",
+      "doc_type": "hr",
+      "description": "General HR policies, benefits, working conditions, and onboarding-related HR rules."
+    },
+    {
+      "file": "onboarding_guide.md",
+      "doc_id": "onboarding_guide",
+      "doc_type": "onboarding",
+      "description": "Step-by-step onboarding guide for new employees, including first-day tasks and initial setup."
+    },
+    {
+      "file": "it_policy.md",
+      "doc_id": "it_policy",
+      "doc_type": "it",
+      "description": "IT usage rules, supported systems, hardware policies, and general IT support guidelines."
+    },
+    {
+      "file": "equipment_policy.md",
+      "doc_id": "equipment_policy",
+      "doc_type": "it",
+      "description": "Company equipment policy covering laptops, monitors, peripherals, and hardware requests."
+    },
+    {
+      "file": "security_incident_playbook.md",
+      "doc_id": "security_incident_playbook",
+      "doc_type": "it",
+      "description": "Security incident response procedures, reporting steps, and escalation guidelines."
+    },
+    {
+      "file": "hr_faq.md",
+      "doc_id": "hr_faq",
+      "doc_type": "hr",
+      "description": "Frequently asked HR questions with informal explanations about home office, probation, compensation, and personal data changes."
+    },
+    {
+      "file": "it_troubleshooting.md",
+      "doc_id": "it_troubleshooting",
+      "doc_type": "it",
+      "description": "Self-service IT troubleshooting steps for common issues such as VPN, email access, and device performance, including escalation criteria."
+    },
+    {
+      "file": "access_matrix.md",
+      "doc_id": "access_matrix",
+      "doc_type": "it",
+      "description": "Role-based system access matrix defining default permissions, access request rules, and required approvals."
+    }
+  ]
+}
