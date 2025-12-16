@@ -89,13 +89,16 @@ This will start the Chatbot UI and the backend services.
     cd onboarding_chatbot
     ```
 
-2.  **Start the application**:
+2.  **Configure Environment (Optional)**:
+    To enable **LangSmith** tracing for observability, open `docker-compose.yml`, uncomment the `LANGSMITH_*` environment variables in the `ui` service, and add your API Key.
+
+3.  **Start the application**:
 
     ```bash
     docker compose up --build
     ```
 
-3.  **Access the UI**:
+4.  **Access the UI**:
     Open your browser at `http://localhost:8501`.
 
 ### Option 2: Run Locally
@@ -114,7 +117,17 @@ This will start the Chatbot UI and the backend services.
     uv run src/onboarding_agent/rag/ingest.py
     ```
 
-3.  **Run the Streamlit App**:
+3.  **Configure Environment (Optional)**:
+    To enable **LangSmith** tracing, create a `.env` file in the root directory:
+
+    ```bash
+    LANGSMITH_TRACING=true
+    LANGSMITH_ENDPOINT=https://api.smith.langchain.com
+    LANGSMITH_API_KEY=<your-api-key>
+    LANGSMITH_PROJECT=onboarding_agent-local
+    ```
+
+4.  **Run the Streamlit App**:
     ```bash
     PYTHONPATH=src uv run streamlit run streamlit/app.py
     ```
@@ -186,3 +199,25 @@ To run the load test:
 ├── docker-compose.yml      # Container orchestration
 └── Dockerfile              # Application container definition
 ```
+
+---
+
+## 🔮 Future Improvement Ideas
+
+- **Advanced RAG**:
+  - **Hybrid Search**: Combine BM25 (keyword) and Vector search for better retrieval accuracy.
+  - **Query Transformations**: Implement Multi-query expansion and query decomposition.
+  - **Reranking**: Add a Cross-Encoder reranker to filter retrieved documents.
+  - **Metadata Filtering**: Apply filters (e.g., `category="HR"`) based on classified intent.
+- **Persistence & Memory**:
+  - Add a database backend (Postgres/Redis) to LangGraph `checkpointer` for long-term conversation history.
+  - Enable "Thread-level" memory to handle follow-up questions effectively.
+- **Prompt Engineering**:
+  - Refine prompts with Few-Shot examples.
+  - Use Chain-of-Thought (CoT) for complex reasoning in the Router node.
+- **Structured Outputs**: Enforce strict output schemas (Pydantic) for reliable parsing of agent decisions.
+- **Performance**:
+  - **Async Execution**: Fully asynchronous graph invocation for better concurrency.
+  - **Streaming**: Stream LLM tokens to the UI for improved user experience.
+- **Ops & Eval**:
+  - **Guardrails**: Add safety checks for input/output (e.g., PII masking).
