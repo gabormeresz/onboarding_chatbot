@@ -19,13 +19,3 @@ def build_graph():
     g.add_edge("retrieve_docs", "generate_answer")
     g.add_edge("generate_answer", END)
     return g.compile()
-
-
-if __name__ == "__main__":
-    graph = build_graph()
-    initial_state = build_initial_state("What should I do on my first day")
-    out = graph.invoke(initial_state)
-
-    print("\nOriginal query:", out["user_query"])
-    print("Rewritten query:", out["rewritten_query"])
-    print("\nAnswer:", out["answer"])

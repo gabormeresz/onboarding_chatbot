@@ -94,37 +94,3 @@ def build_graph():
     graph.add_edge("final_answer", END)
 
     return graph.compile()
-
-
-if __name__ == "__main__":
-    # Test the graph with sample queries
-    from onboarding_agent.core.state import build_initial_state
-
-    graph = build_graph()
-
-    print("=" * 60)
-    print("Test 1: Policy Question")
-    print("=" * 60)
-    result = graph.invoke(build_initial_state("What should I do on my first day?"))
-    print(f"Intent: {result['intent']}")
-    print(f"Route: {result['route_decision']}")
-    print(f"Answer: {result['answer'][:200]}...")
-
-    print("\n" + "=" * 60)
-    print("Test 2: Critical Issue")
-    print("=" * 60)
-    result = graph.invoke(
-        build_initial_state("URGENT: Data breach detected in customer database!")
-    )
-    print(f"Intent: {result['intent']}")
-    print(f"Route: {result['route_decision']}")
-    print(f"Ticket: {result.get('ticket_info', {}).get('ticket_id', 'N/A')}")
-    print(f"Answer: {result['answer'][:200]}...")
-
-    print("\n" + "=" * 60)
-    print("Test 3: IT Question")
-    print("=" * 60)
-    result = graph.invoke(build_initial_state("How do I reset my password?"))
-    print(f"Intent: {result['intent']}")
-    print(f"Route: {result['route_decision']}")
-    print(f"Answer: {result['answer'][:200]}...")
